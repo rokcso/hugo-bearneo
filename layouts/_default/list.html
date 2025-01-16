@@ -1,0 +1,49 @@
+{{ define "main" }}
+<content>
+  {{ if .Data.Singular }}
+  <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
+  <small>
+    <a href="{{ "blog" | relURL }}">Remove filter</a>
+  </small>
+  {{ end }}
+  <ul class="blog-posts">
+    <span>There {{ if eq (len .Pages) 1 }} is 1 piece. {{ else }} are {{ len .Pages }} pieces. {{ end }}</span>
+    {{ $currentYear := 0 }}
+    {{ range .Pages }}
+      <!-- 新增一个条件判断，过滤标记为 hidden 的文章 -->
+      {{ if not .Params.hidden }}
+      {{ $year := .Date.Year }}
+      {{ if ne $year $currentYear }}
+        <h3>{{ $year }}</h3>
+        {{ $currentYear = $year }}
+      {{ end }}
+    <li>
+      <span>
+        <i>
+          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+            <!-- {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }} -->
+            {{ .Date.Format (default "02 Jan." .Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </span>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+    {{ else }}
+    <li>
+      No posts yet
+    </li>
+    {{ end }}
+  </ul>
+  {{ if .Data.Singular }}
+  {{else}}
+    <small>
+      <div>
+        {{ range .Site.Taxonomies.tags }}
+        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
+        {{ end }}
+      </div>
+    </small>
+    {{ end }}
+</content>
+{{ end }}

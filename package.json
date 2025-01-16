@@ -1,0 +1,28 @@
+{
+  "name": "hugo-bearblog-neo",
+  "private": true,
+  "version": "0.0.1",
+  "description": "🧸 A [Hugo](https://gohugo.io/)-theme based on [Bear Blog](https://bearblog.dev).",
+  "main": "index.js",
+  "devDependencies": {
+    "js-beautify": "^1.15.1"
+  },
+  "scripts": {
+    "test": "npm run beautify",
+    "beautify": "js-beautify layouts/**/*.html -r"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rokcso/hugo-bearblog-neo.git"
+  },
+  "author": {
+    "name": "Rokcso",
+    "email": "rokcsox@gmail.com",
+    "url": "https://rokcso.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rokcso/hugo-bearblog-neo/issues"
+  },
+  "homepage": "https://github.com/rokcso/hugo-bearblog-neo#readme"
+}
