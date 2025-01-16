@@ -27,14 +27,19 @@ min_version = "v0.110.0"
   homepage = "https://rokcso.com"
 
 # If porting an existing theme
-original = [
-  {
-    name = "ʕ•ᴥ•ʔ Bear Blog",
-    homepage = "https://bearblog.dev",
-    repo = "https://github.com/HermanMartinus/bearblog"
-  }, {
-    name = "Hugo Bear Blog",
-    homepage = "https://github.com/janraasch/hugo-bearblog",
-    repo = "https://github.com/janraasch/hugo-bearblog"
-  }
-]
+[original]
+  name = "ʕ•ᴥ•ʔ Bear Blog"
+  homepage = "https://bearblog.dev"
+  repo = "https://github.com/HermanMartinus/bearblog"
+
+# original = [
+#  {
+#    name = "ʕ•ᴥ•ʔ Bear Blog",
+#    homepage = "https://bearblog.dev",
+#    repo = "https://github.com/HermanMartinus/bearblog"
+#  }, {
+#    name = "Hugo Bear Blog",
+#    homepage = "https://github.com/janraasch/hugo-bearblog",
+#    repo = "https://github.com/janraasch/hugo-bearblog"
+#  }
+# ]
