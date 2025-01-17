@@ -35,8 +35,7 @@ ignoreErrors = ["error-disable-taxonomy"]
   # https://gohugo.io/templates/internal#open-graph.
   images = ["images/share.png"]
 
-  # Another "title" :-). This one is used as the site_name on the Hugo's internal
-  # opengraph structured data template.
+  # Another "title" :-). This one is used as the site_name on the Hugo's internal opengraph structured data template.
   # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
   title = "Hugo ʕ•ᴥ•ʔ Bear"
 
