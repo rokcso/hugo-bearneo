@@ -1,4 +1,6 @@
-{{ define "main" }} {{ if eq .Type "blog" }} {{ if not .Params.menu }}
+{{ define "main" }}
+{{ if eq .Type "blog" }}
+{{ if not .Params.menu }}
 <h1>{{ .Title }}</h1>
 {{ if .Date }}
 <p>
@@ -8,11 +10,24 @@
     </time>
   </i>
 </p>
-{{ end }}{{ end }}{{ end }}
+{{ end }}
+{{ end }}
+{{ end }} 
+
 <content> {{ .Content }} </content>
+
 <p>
   {{ range (.GetTerms "tags") }}
   <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
   {{ end }}
 </p>
+
+<!-- Place the TOC at the end to ensure the article content loads first. -->
+{{ $tocEnabled := default .Site.Params.toc .Params.toc }}
+{{ if $tocEnabled }} 
+<div class="toc">
+{{ .TableOfContents }}
+</div>
+{{ end }}
+
 {{ end }}

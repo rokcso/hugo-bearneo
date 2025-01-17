@@ -59,3 +59,13 @@ ignoreErrors = ["error-disable-taxonomy"]
 
   # 博客文章列表是否显示文章数量（只统计未被隐藏的文章）
   showPostCount = true
+
+  # 是否显示 TOC
+  toc = true
+
+[markup]
+  # 配置 TOC 渲染规则
+  [markup.tableOfContents]
+    # 从 h2 开始到 h4 结束，后续的 h 等级将不会被渲染
+    startLevel = 2
+    endLevel = 4

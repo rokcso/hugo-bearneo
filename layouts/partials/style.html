@@ -1,7 +1,7 @@
 <style>
   /* light theme */
   :root {
-    --width-max: 800px;
+    --width-max: 720px;
     --font-primary: Verdana, sans-serif;
     --font-secondary: monospace;
     --font-size-primary: 1em;
@@ -16,12 +16,12 @@
     --img-border-color: #f2f2f2;
     --code-bg-color: #f2f2f2;
     --code-text-color: #222;
-    --blockquote-border-color: #222;
-    --blockquote-text-color: #222;
+    --blockquote-border-color: #666;
+    --blockquote-text-color: #666;
   }
 
-  /* dark theme */
   @media (prefers-color-scheme: dark) {
+    /* dark theme */
     :root {
       --body-bg-color: #1c1c1c;
       --bold-text-color: #eee;
@@ -230,6 +230,45 @@
     color: var(--link-visited-color);
   }
 
+  /* 外层容器，用于固定位置 */
+  div.toc {
+    position: fixed;
+    top: 50%;
+    left: calc((100vw + var(--width-max)) / 2);
+    transform: translateY(-50%);
+    width: calc((90vw - var(--width-max)) / 2);
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px 8px;
+    z-index: 99;
+
+    /* 隐藏滚动条 */
+    &::-webkit-scrollbar {
+        display: none; /* 对于 Webkit 浏览器（Chrome, Safari） */
+    }
+    -ms-overflow-style: none; /* IE 和 Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+
+  div.toc ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  div.toc ul li {
+    margin: 8px 0;
+  }
+
+  div.toc ul li a {
+    text-decoration: none;
+    color: var(--blockquote-text-color);
+  }
+
+  div.toc ul li a:hover {
+    color: var(--link-color);
+  }
+
   @media (max-width: 500px) {
     img[src*="#minipic"] {
       max-width: 100%;
@@ -237,6 +276,10 @@
       margin-left: auto;
       margin-right: auto;
       border-radius: 4px;
+    }
+
+    div.toc {
+      display: none;
     }
   }
 </style>
