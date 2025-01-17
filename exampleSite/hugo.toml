@@ -49,3 +49,13 @@ ignoreErrors = ["error-disable-taxonomy"]
   # for details. An example TOML config that uses [ISO
   # 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
   # dateFormat = "2006-01-02"
+
+  # Follow App 的 feedId 和 userId，用于 Claim 你的博客，参见：https://rokcso.com/p/follow-claim-feed/
+  followFeedId = "55587008227934208"
+  followUserId = "41373547352712192"
+
+  # 博客文章列表是否按年份分组
+  groupByYear = true
+
+  # 博客文章列表是否显示文章数量（只统计未被隐藏的文章）
+  showPostCount = true
