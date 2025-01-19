@@ -22,6 +22,110 @@
   {{ end }}
 </p>
 
+{{ $upvoteEnabled := default .Site.Params.upvote .Params.upvote }}
+{{ if $upvoteEnabled }}
+<div class="upvote-container">
+<small class="upvote">
+  <button class="upvote-btn" id="upvote-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+    <span class="upvote-count" id="upvote-count">0</span>
+  </button>
+</small>
+</div>
+
+<script>
+  let hasUpvoted = false;
+  let upvoteBtn;
+  let upvoteCount;
+
+  // 页面加载时获取点赞数量
+  document.addEventListener('DOMContentLoaded', function() {
+    const slug = '{{ .Slug }}';
+    upvoteBtn = document.getElementById('upvote-btn');
+    upvoteCount = document.getElementById('upvote-count');
+    getCount(slug);
+
+    // 处理点赞按钮的点击事件
+    upvoteBtn.addEventListener('click', handleUpvote);
+  });
+
+  // 点赞方法
+  async function handleUpvote() {
+    if (hasUpvoted) {
+      console.log('You have already upvoted this post!');
+      return;
+    }
+    const slug = '{{ .Slug }}';
+
+    // 禁用按钮以防止重复点击
+    upvoteBtn.disabled = true;
+    // 给按钮添加 upvoted 类以赋以点击过的样式
+    upvoteBtn.classList.add('upvoted');
+    // 更新 upvote-count 的值 +1
+    upvoteCount.innerText = parseInt(upvoteCount.innerText) + 1;
+
+    try {
+      const response = await fetch('{{ .Site.Params.upvoteURL }}upvote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ postId: slug, diff: 1 }),
+      });
+
+      if (response.ok) {
+        console.log('Upvote successful!');
+        hasUpvoted = true;
+        await getCount(slug, 3);
+      } else {
+        console.log('Upvote failed!');
+      }
+    } catch (error) {
+      console.error('Error: ', error);
+    } finally {
+      upvoteBtn.disabled = false;
+    }
+  }
+
+  // 获取 Upvote 数量的方法，支持设置重试次数，默认不重试
+  async function getCount(slug, retryCount = 0) {
+    try {
+      const response = await fetch('{{ .Site.Params.upvoteURL }}count?post=' + slug, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (data.code === 0) {
+        const count = data.data.count;
+        upvoteCount.innerText = count;
+        hasUpvoted = data.data.hasUpvoted;
+        if (hasUpvoted) {
+          upvoteBtn.classList.add('upvoted');
+        } else {
+          upvoteBtn.classList.remove('upvoted');
+        }
+      } else {
+        console.error('Failed to get upvote count: ', data.msg);
+      }
+    } catch (error) {
+      console.error('Error: ', error);
+      if (retryCount > 0) {
+        setTimeout(() => {
+          getCount(slug, retryCount - 1);
+        }, 1000);
+      }
+    }
+  }
+</script>
+{{ end }}
+
 <!-- Place the TOC at the end to ensure the article content loads first. -->
 {{ $tocEnabled := default .Site.Params.toc .Params.toc }}
 {{ if $tocEnabled }} 

@@ -63,6 +63,11 @@ ignoreErrors = ["error-disable-taxonomy"]
   # 是否显示 TOC
   toc = true
 
+  # Post Upvote API 配置，详见 https://github.com/rokcso/post-upvote-api
+  upvote = true
+  # URL 末尾的 / 不能少
+  upvoteURL = "https://post-upvote-apo.workers.dev/" 
+
 [markup]
   # 配置 TOC 渲染规则
   [markup.tableOfContents]
