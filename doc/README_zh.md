@@ -76,7 +76,7 @@
 
 ### Follow App Claim
 
-[Follow] 是一个 RSS 订阅工具，作为博客创作者，在 Follow 中 Claim 自己的博客可以接收博客读者通过 Follow 提供的 $POWER 打赏。对此我曾经写过一篇 [文章](https://rokcso.com/p/follow-claim-feed/) 介绍如何在 Follow 中 Claim 自己的博客。
+[Follow](https://follow.is/) 是一个 RSS 订阅工具，作为博客创作者，在 Follow 中 Claim 自己的博客可以接收博客读者通过 Follow 提供的 $POWER 打赏。对此我曾经写过一篇 [文章](https://rokcso.com/p/follow-claim-feed/) 介绍如何在 Follow 中 Claim 自己的博客。
 
 而 hugo-bearblog-neo 原生支持了我文章中提到的「方案三：RSS Tag」，只需要在 Hugo 博客配置文件 `hugo.toml` 中添加如下配置：
 

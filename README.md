@@ -76,7 +76,7 @@ Add the following configuration to the Hugo blog configuration file `hugo.toml`:
 
 ### Follow App Claim
 
-[Follow] is an RSS subscription tool. As a blog creator, claiming your blog on Follow allows you to receive $POWER tips from blog readers through Follow. I once wrote an [article](https://rokcso.com/p/follow-claim-feed-en/) explaining how to claim your blog on Follow.
+[Follow](https://follow.is/) is an RSS subscription tool. As a blog creator, claiming your blog on Follow allows you to receive $POWER tips from blog readers through Follow. I once wrote an [article](https://rokcso.com/p/follow-claim-feed-en/) explaining how to claim your blog on Follow.
 
 The hugo-bearblog-neo natively supports the "Scheme III: RSS Tag" mentioned in my article. You only need to add the following configuration to the Hugo blog configuration file `hugo.toml`:
 
