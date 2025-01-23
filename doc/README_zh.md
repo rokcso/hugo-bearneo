@@ -8,19 +8,31 @@
 
 从 [Hugo Bear Blog][hugo-bearblog] 移植而来，由于原作者选择与原版 [Bear Blog](https://bearblog.dev) 保持一致，因此我选择创建一个更具扩展性和功能丰富的 [Hugo Bear Blog][hugo-bearblog]。
 
-准则：
+**准则**
 
 1. 继续坚持 [Bear Blog](https://bearblog.dev) 的理念
 2. 保证能通过配置还原到和 [Hugo Bear Blog][hugo-bearblog] 甚至是和 [Bear Blog](https://bearblog.dev) 一致
+
+**目录**
+
+- [✨ 功能](#-功能)
+- [🐻 示例](#-示例)
+- [📑 使用手册](#-使用手册)
+    - [Upvote 文章](#upvote-文章)
+    - [文章列表页按年份分组](#文章列表页按年份分组)
+    - [文章页显示目录](#文章页显示目录)
+    - [Follow App Claim](#follow-app-claim)
+- [🎁 鸣谢](#-鸣谢)
+- [©️ License](#️-license)
 
 ## ✨ 功能
 
 > 在 [Hugo Bear Blog][hugo-bearblog] 的基础上，增加了以下功能：
 
 - [x] Upvote 文章（亮点功能 👍，复刻自 Bear Blog）
-- [x] Follow App Claim
 - [x] 文章列表页按年份分组
 - [x] 文章页显示目录
+- [x] Follow App Claim
 
 ## 🐻 示例
 
@@ -28,7 +40,7 @@
 
 ## 📑 使用手册
 
-### Upvote
+### Upvote 文章
 
 首先参考 Post Upvote API 的 [README](https://github.com/rokcso/post-upvote-api) 文档，完成后端服务部署。
 
@@ -43,6 +55,38 @@
 ```
 
 注意：URL 末尾的 `/` 一定要加上！
+
+### 文章列表页按年份分组
+
+在 Hugo 博客配置文件 `hugo.toml` 中添加如下配置:
+
+```toml
+[params]
+    groupByYear = true
+```
+
+### 文章页显示目录
+
+在 Hugo 博客配置文件 `hugo.toml` 中添加如下配置:
+
+```toml
+[params]
+    toc = true
+```
+
+### Follow App Claim
+
+[Follow] 是一个 RSS 订阅工具，作为博客创作者，在 Follow 中 Claim 自己的博客可以接收博客读者通过 Follow 提供的 $POWER 打赏。对此我曾经写过一篇 [文章](https://rokcso.com/p/follow-claim-feed/) 介绍如何在 Follow 中 Claim 自己的博客。
+
+而 hugo-bearblog-neo 原生支持了我文章中提到的「方案三：RSS Tag」，只需要在 Hugo 博客配置文件 `hugo.toml` 中添加如下配置：
+
+```toml
+[params]
+    followFeedId = "00000000000000000"
+    followUserId = "00000000000000000"
+```
+
+注意：请记得将配置中的 follow id 替换为你自己的！
 
 ## 🎁 鸣谢
 
