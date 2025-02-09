@@ -30,7 +30,8 @@
 
 > 在 [Hugo Bear Blog][hugo-bearblog] 的基础上，增加了以下功能：
 
-- [x] Upvote 文章（亮点功能 👍，复刻自 Bear Blog）
+- [x] 点赞文章（亮点功能 👍，复刻自 Bear Blog）
+- [x] 搜索文章
 - [x] 文章列表页按年份分组
 - [x] 文章页显示目录
 - [x] Follow App Claim

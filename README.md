@@ -31,6 +31,7 @@ Transplanted from [Hugo Bear Blog][hugo-bearblog], because the original author c
 > Based on [Hugo Bear Blog][hugo-bearblog], the following features have been added:
 
 - [x] Upvote post (Highlight feature 👍, Replicated from Bear Blog)
+- [x] Search post
 - [x] Post list page grouped by year
 - [x] Post page displays table of contents
 - [x] Follow App Claim
