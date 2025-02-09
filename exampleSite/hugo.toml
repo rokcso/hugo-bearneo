@@ -51,26 +51,38 @@ ignoreErrors = ["error-disable-taxonomy"]
   # dateFormat = "2006-01-02"
 
   # Follow App 的 feedId 和 userId，用于 Claim 你的博客，参见：https://rokcso.com/p/follow-claim-feed/
+  # Follow App's feedId and userId to claim your blog, see: https://rokcso.com/p/follow-claim-feed/
   followFeedId = "55587008227934208"
   followUserId = "41373547352712192"
 
   # 博客文章列表是否按年份分组
+  # Whether the list of blog posts is grouped by year.
   groupByYear = true
 
   # 博客文章列表是否显示文章数量（只统计未被隐藏的文章）
+  # Whether to display the number of blog posts in the list (only counting posts that are not hidden).
   showPostCount = true
 
+  # 博客文章列表页是否启用文章搜索功能
+  # Whether the blog article list page enables article search.
+  postSearch = true
+
   # 是否显示 TOC
+  # Whether to display TOC.
   toc = true
 
   # Post Upvote API 配置，详见 https://github.com/rokcso/post-upvote-api
+  # Post Upvote API configuration, see https://github.com/rokcso/post-upvote-api
   upvote = true
   # URL 末尾的 / 不能少
+  # The trailing / at the end of the URL cannot be omitted.
   upvoteURL = "https://post-upvote-apo.workers.dev/" 
 
 [markup]
   # 配置 TOC 渲染规则
+  # Configure TOC rendering rules.
   [markup.tableOfContents]
     # 从 h2 开始到 h4 结束，后续的 h 等级将不会被渲染
+    # From h2 to h4, subsequent h levels will not be rendered.
     startLevel = 2
     endLevel = 4

@@ -106,7 +106,7 @@
   }
 
   input {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   content {
@@ -142,15 +142,14 @@
     margin-right: auto;
     border: 1px solid var(--img-border-color);
     border-radius: 4px;
+    content-visibility: auto;
+    loading: lazy;
   }
 
   img[src*="#minipic"] {
     max-width: 50%;
-    display: block;
     margin-left: 0;
     margin-right: auto;
-    border: 1px solid var(--img-border-color);
-    border-radius: 4px;
   }
 
   i {
@@ -294,10 +293,8 @@
   @media (max-width: 500px) {
     img[src*="#minipic"] {
       max-width: 100%;
-      display: block;
       margin-left: auto;
       margin-right: auto;
-      border-radius: 4px;
     }
 
     div.toc {

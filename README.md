@@ -19,6 +19,7 @@ Transplanted from [Hugo Bear Blog][hugo-bearblog], because the original author c
 - [🐻 Demo](#-demo)
 - [📑 User Manual](#-user-manual)
   - [Upvote post](#upvote-post)
+  - [Search post](#search-post)
   - [Post list page grouped by year](#post-list-page-grouped-by-year)
   - [Post page displays table of contents](#post-page-displays-table-of-contents)
   - [Follow App Claim](#follow-app-claim)
@@ -55,6 +56,17 @@ Then add the following configuration to the Hugo blog configuration file `hugo.t
 ```
 
 Note: The `/` at the end of the URL must be included!
+
+### Search post
+
+Display a search box on the post list page and enter post title keywords to search for specific posts.
+
+Add the following configuration to the Hugo blog configuration file `hugo.toml`:
+
+```toml
+[params]
+    postSearch = true
+```
 
 ### Post list page grouped by year
 

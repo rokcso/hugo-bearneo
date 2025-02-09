@@ -6,21 +6,67 @@
     <a href="{{ "blog" | relURL }}">Remove filter</a>
   </small>
   {{ end }}
-  {{ if .Site.Params.showPostCount}}
+  {{ if .Site.Params.postSearch }}
+  <input id="search-input" type="text" placeholder="Search..." style="margin-top: 16px" />
+  <script>
+    // 等待 DOM 完全加载后执行
+    document.addEventListener('DOMContentLoaded', function () {
+      // 缓存 DOM 元素
+      const searchInput = document.getElementById('search-input');
+      const posts = document.querySelectorAll('.blog-posts li');
+      const years = document.querySelectorAll('.blog-posts h3');
+
+      // 更新搜索结果
+      function updateSearchResults(searchTerm) {
+        let visiblePosts = 0;
+        const displayedYears = new Set();
+        posts.forEach(function (post) {
+          const title = post.querySelector('a').textContent.toLowerCase();
+          const year = post.querySelector('time').getAttribute('datetime').split('-')[0];
+          if (title.includes(searchTerm)) {
+            post.style.display = '';
+            visiblePosts++;
+            displayedYears.add(year);
+          } else {
+            post.style.display = 'none';
+          }
+        });
+
+        {{ if .Site.Params.groupByYear }}
+        years.forEach(function (y) {
+          const year = y.textContent;
+          y.style.display = displayedYears.has(year) ? '' : 'none';
+        });
+        {{ end }}
+
+        {{ if .Site.Params.showPostCount }}
+        const countText = `There ${visiblePosts <= 1 ? `is ${visiblePosts} piece.` : `are ${visiblePosts} pieces.`}`;
+        document.getElementById('post-count').innerHTML = countText;
+        {{ end }}
+      }
+
+      searchInput.addEventListener('input', function () {
+        updateSearchResults(this.value.toLowerCase().trim());
+      });
+    });
+  </script>
+  {{ end }}
+  {{ if .Site.Params.showPostCount }}
   {{ $visiblePages := where .Pages "Params.hidden" "!=" true }}
-  <p>There {{ if eq (len $visiblePages) 1 }} is 1 piece. {{ else }} are {{ len $visiblePages }} pieces. {{ end }}</p>
+  <p id="post-count">There {{ if le (len $visiblePages) 1 }} is {{ len $visiblePages }} piece. {{ else }} are {{ len
+    $visiblePages }} pieces. {{ end }}</p>
   {{ end }}
   <ul class="blog-posts">
     {{ $currentYear := 0 }}
     {{ range .Pages }}
-      {{ if not .Params.hidden }}
-      {{ if .Site.Params.groupByYear }}
-      {{ $year := .Date.Year }}
-      {{ if ne $year $currentYear }}
-      <h3>{{ $year }}</h3>
-      {{ $currentYear = $year }}
-      {{ end }}
-      {{ end }}
+    {{ if not .Params.hidden }}
+    {{ if .Site.Params.groupByYear }}
+    {{ $year := .Date.Year }}
+    {{ if ne $year $currentYear }}
+    <h3>{{ $year }}</h3>
+    {{ $currentYear = $year }}
+    {{ end }}
+    {{ end }}
     <li>
       <span class="{{ if .Site.Params.groupByYear }}grouped{{ else }}ungrouped{{ end }}">
         <i>
@@ -44,13 +90,13 @@
   </ul>
   {{ if .Data.Singular }}
   {{else}}
-    <small>
-      <div>
-        {{ range .Site.Taxonomies.tags }}
-        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
-        {{ end }}
-      </div>
-    </small>
-    {{ end }}
+  <small>
+    <div>
+      {{ range .Site.Taxonomies.tags }}
+      <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
+      {{ end }}
+    </div>
+  </small>
+  {{ end }}
 </content>
 {{ end }}
