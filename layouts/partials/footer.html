@@ -1,26 +1,31 @@
+{{ if ne .Site.Params.Footer.hideRSSAndEmail true }}
 <!-- Enable RSS and email exists -->
-{{ if and ( ne .Site.Params.enableRSS false ) .Site.Params.email }}
-Subscribe via <a href="/index.xml">RSS</a> or just <a href="mailto:{{ .Site.Params.email }}">say hello</a>.
+{{ if and ( ne .Site.Params.RSS.enableRSS false ) .Site.Params.Author.email }}
+Subscribe via <a href="/index.xml">RSS</a> or just <a href="mailto:{{ .Site.Params.Author.email }}">say hello</a>.
 <br />
 {{ end }}
 <!-- Enable RSS and email does not exists -->
-{{ if and ( ne .Site.Params.enableRSS false ) (not .Site.Params.email) }}
+{{ if and ( ne .Site.Params.RSS.enableRSS false ) (not .Site.Params.Author.email) }}
 Subscribe via <a href="/index.xml">RSS</a>.
 <br />
 {{ end }}
 <!-- Do not enable RSS and email exists -->
-{{ if and ( ne .Site.Params.enableRSS true ) .Site.Params.email }}
-Say hello via <a href="mailto:{{ .Site.Params.email }}">email</a>.
+{{ if and ( ne .Site.Params.RSS.enableRSS true ) .Site.Params.Author.email }}
+Say hello via <a href="mailto:{{ .Site.Params.Author.email }}">email</a>.
 <br />
+{{ end }}
 {{ end }}
 
 <!-- Made with line -->
-{{ if ne .Site.Params.hideMadeWithLine true }}Made with
+{{ if ne .Site.Params.Footer.hideMadeWithLine true }}Made with
 <a href="https://github.com/rokcso/hugo-bearblog-neo/">Hugo Bear Neo</a>.
 <br />
 {{ end }}
 
 <!-- Sitemap -->
-{{ if ne .Site.Params.enableSitemap false }}
+{{ if ne .Site.Params.Footer.hideCopyright true }}
+{{ .Site.Params.copyright }}
+{{ end }}
+{{ if ne .Site.Params.Footer.hideSitemap true }}
 🗺️ <a href="/sitemap.xml">Sitemap</a>.
 {{ end }}

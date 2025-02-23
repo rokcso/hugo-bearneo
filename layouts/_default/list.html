@@ -68,7 +68,7 @@
     {{ end }}
     {{ end }}
     <li>
-      <span class="{{ if .Site.Params.groupByYear }}grouped{{ else }}ungrouped{{ end }}">
+      <span class="{{ if .Site.Params.groupByYear }} grouped {{ else }} ungrouped {{ end }}">
         <i>
           <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
             {{ if .Site.Params.groupByYear }}

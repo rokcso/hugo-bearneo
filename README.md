@@ -28,13 +28,20 @@ Transplanted from [Hugo Bear Blog][hugo-bearblog], because the original author c
 
 ## ✨ Features
 
-> Based on [Hugo Bear Blog][hugo-bearblog], the following features have been added:
+Based on [Hugo Bear Blog][hugo-bearblog], the following features have been added:
 
 - [x] Upvote post (Highlight feature 👍, Replicated from Bear Blog)
 - [x] Search post
 - [x] Post list page grouped by year
 - [x] Post page displays table of contents
 - [x] Follow App Claim
+
+There are still some optimization items:
+
+- Add canonical metadata, better SEO
+- Support RSS
+- More abundant Footer content
+- ...
 
 ## 🐻 Demo
 

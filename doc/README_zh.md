@@ -28,13 +28,20 @@
 
 ## ✨ 功能
 
-> 在 [Hugo Bear Blog][hugo-bearblog] 的基础上，增加了以下功能：
+在 [Hugo Bear Blog][hugo-bearblog] 的基础上，增加了以下功能：
 
 - [x] 点赞文章（亮点功能 👍，复刻自 Bear Blog）
 - [x] 搜索文章
 - [x] 文章列表页按年份分组
 - [x] 文章页显示目录
 - [x] Follow App Claim
+
+还有一些优化项：
+
+- 添加 canonical 元数据，更好的 SEO
+- 支持 RSS
+- 更丰富的 Footer 内容
+- ……
 
 ## 🐻 示例
 
