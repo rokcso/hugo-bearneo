@@ -1,7 +1,26 @@
-Subscribe via <a href="/index.xml">RSS</a> or just
-<a href="mailto:rokcsox@gmail.com">say hello</a>.
+<!-- Enable RSS and email exists -->
+{{ if and ( ne .Site.Params.enableRSS false ) .Site.Params.email }}
+Subscribe via <a href="/index.xml">RSS</a> or just <a href="mailto:{{ .Site.Params.email }}">say hello</a>.
 <br />
+{{ end }}
+<!-- Enable RSS and email does not exists -->
+{{ if and ( ne .Site.Params.enableRSS false ) (not .Site.Params.email) }}
+Subscribe via <a href="/index.xml">RSS</a>.
+<br />
+{{ end }}
+<!-- Do not enable RSS and email exists -->
+{{ if and ( ne .Site.Params.enableRSS true ) .Site.Params.email }}
+Say hello via <a href="mailto:{{ .Site.Params.email }}">email</a>.
+<br />
+{{ end }}
+
+<!-- Made with line -->
 {{ if ne .Site.Params.hideMadeWithLine true }}Made with
-<a href="https://github.com/rokcso/hugo-bearblog-neo/">Hugo Bear Neo</a>.{{ end }}
+<a href="https://github.com/rokcso/hugo-bearblog-neo/">Hugo Bear Neo</a>.
 <br />
+{{ end }}
+
+<!-- Sitemap -->
+{{ if ne .Site.Params.enableSitemap false }}
 🗺️ <a href="/sitemap.xml">Sitemap</a>.
+{{ end }}

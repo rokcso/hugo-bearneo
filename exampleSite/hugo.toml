@@ -22,6 +22,13 @@ ignoreErrors = ["error-disable-taxonomy"]
   tags = "/blog/:slug"
 
 [params]
+  # 若不配置，默认空
+    email = 'hhhh@gmail.com'
+    # 若不配置，默认 true
+    enableRSS = true
+    # 若不配置，默认 true
+    enableSitemap = true
+
   # The "description" of your website. This is used in the meta data of your generated html.
   description = "Hugo + Bear = :heart:"
 
@@ -41,6 +48,7 @@ ignoreErrors = ["error-disable-taxonomy"]
 
   # This theme will, by default, inject a made-with-line at the bottom of the page.
   # You can turn it off, but we would really appreciate if you don’t :-).
+  # 若不配置，默认 false
   # hideMadeWithLine = true
 
   # By default, this theme displays dates with a format like "02 Jan, 2006", but
