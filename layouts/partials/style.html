@@ -19,6 +19,9 @@
     --blockquote-border-color: #666;
     --blockquote-text-color: #666;
     --upvoted-color: #FA8072;
+    --caption-text-color: #666;
+    --toc-text-color: #e5e5e5;
+    --toc-hover-color: #655e5e;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -36,6 +39,9 @@
       --code-text-color: #ddd;
       --blockquote-border-color: #ccc;
       --blockquote-text-color: #ccc;
+      --caption-text-color: #aaa;
+      --toc-text-color: #373737;
+      --toc-hover-color: #CAC3C3;
     }
   }
 
@@ -152,6 +158,18 @@
     margin-right: auto;
   }
 
+  .image-caption figcaption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8em;
+    margin-top: 0.6em;
+    color: var(--caption-text-color);
+  }
+
+  .image-caption {
+    margin: auto;
+  }
+
   i {
     font-style: normal;
   }
@@ -230,43 +248,93 @@
     color: var(--link-visited-color);
   }
 
-  /* 外层容器，用于固定位置 */
-  div.toc {
-    position: fixed;
-    top: 50%;
-    left: calc((100vw + var(--width-max)) / 2);
-    transform: translateY(-50%);
-    width: calc((90vw - var(--width-max)) / 2);
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 20px 8px;
-    z-index: 99;
+  /* TOC 样式 */
+    div.toc {
+        position: fixed; /* 固定定位 */
+        top: 50%; /* 垂直居中 */
+        left: calc((100vw + var(--width-max)) / 2); /* 水平定位，根据视口宽度和最大内容宽度计算 */
+        transform: translateY(-50%); /* 垂直居中调整 */
+        width: calc((90vw - var(--width-max)) / 2); /* 宽度计算 */
+        max-height: 80vh; /* 最大高度为视口高度的80% */
+        overflow-y: auto; /* 垂直方向内容溢出时显示滚动条 */
+        border: none; /* 无边框 */
+        padding: 0; /* 无内边距 */
+        margin: 0; /* 无外边距 */
+        z-index: 99; /* 设置堆叠顺序，确保在其他元素之上 */
 
-    /* 隐藏滚动条 */
-    &::-webkit-scrollbar {
-        display: none; /* 对于 Webkit 浏览器（Chrome, Safari） */
+        /* 隐藏滚动条 */
+        &::-webkit-scrollbar { /* Webkit 浏览器（Chrome, Safari）滚动条样式 */
+            display: none; /* 隐藏滚动条 */
+        }
+
+        -ms-overflow-style: none; /* IE 和 Edge 隐藏滚动条 */
+        scrollbar-width: none; /* Firefox 隐藏滚动条 */
     }
-    -ms-overflow-style: none; /* IE 和 Edge */
-    scrollbar-width: none; /* Firefox */
-  }
 
-  div.toc ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
+    .toc-nav { /* 目录导航容器样式 */
+        padding: 1.5rem; /* 内边距 */
+    }
 
-  div.toc ul li {
-    margin: 8px 0;
-  }
+    .toc-nav ul { /* 目录导航无序列表样式 */
+        list-style: none; /* 移除列表项标记 */
+        padding: 0; /* 移除内边距 */
+        margin: 0; /* 移除外边距 */
+    }
 
-  div.toc ul li a {
-    text-decoration: none;
-    color: var(--blockquote-text-color);
-  }
+    .toc-nav li { /* 目录导航列表项样式 */
+        margin: 8px 0; /* 上下外边距 */
+    }
 
-  div.toc ul li a:hover {
-    color: var(--link-color);
-  }
+    .toc-nav a { /* 目录链接样式 */
+        display: block; /* 块级显示 */
+        text-decoration: none; /* 无下划线 */
+        color: transparent; /* 默认透明 */
+        padding: 0 12px; /* 内边距 */
+        transition: all 0.2s ease; /* 所有属性过渡效果 */
+        font-size: 0.9rem; /* 字体大小 */
+        line-height: 1.4; /* 行高 */
+        text-align: left; /* 文本左对齐 */
+        white-space: nowrap; /* 禁止换行 */
+        overflow: hidden; /* 隐藏溢出内容 */
+        text-overflow: ellipsis; /* 显示省略号 */
+        max-width: 100%; /* 限制最大宽度 */
+    }
+    
+    .toc-nav:hover a {
+        color: var(--toc-text-color); /* hover时显示文字颜色 */
+    }
+
+    .toc-nav a::before { /* 目录链接前的小横线样式 */
+        content: ''; /* 生成内容 */
+        display: inline-block; /* 行内块级显示 */
+        width: 16px; /* 宽度 */
+        height: 4px; /* 高度 */
+        background-color: var(--toc-text-color); /* 灰色背景 */
+        border-radius: 16px; /* 圆角 */
+        margin-right: 12px; /* 右外边距 */
+        vertical-align: middle; /* 垂直居中对齐 */
+    }
+
+    .toc-nav ul ul a::before { /* 二级目录链接前的小横线样式 */
+        width: 12px; /* 显示宽度 */
+        margin-right: 16px; /* 调整右外边距，使其与默认 a::before 占据的总宽度一致 (12px + 12px = 24px) */
+    }
+
+    .toc-nav ul ul ul a::before { /* 三级目录链接前的小横线样式 */
+        width: 8px; /* 显示宽度 */
+        margin-right: 20px; /* 调整右外边距，使其与默认 a::before 占据的总宽度一致 (8px + 16px = 24px) */
+    }
+
+    .toc-nav a.active, /* 活跃状态和鼠标悬停状态的目录链接样式 */
+    .toc-nav a:hover {
+        text-decoration: none; /* 无下划线 */
+        color: var(--toc-hover-color); /* 文字颜色变为深灰色 */
+    }
+
+    .toc-nav a.active::before, /* 活跃状态和鼠标悬停状态的目录链接前小横线样式 */
+    .toc-nav a:hover::before {
+        background-color: var(--toc-hover-color); /* 背景颜色变为深灰色 */
+    }
 
   /* upvote button style */
   button.upvote-btn {
@@ -290,7 +358,7 @@
     font-size: smaller;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     img[src*="#minipic"] {
       max-width: 100%;
       margin-left: auto;

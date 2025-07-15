@@ -130,7 +130,7 @@
 {{ $tocEnabled := default .Site.Params.toc .Params.toc }}
 {{ if $tocEnabled }} 
 <div class="toc">
-{{ .TableOfContents }}
+{{ partial "toc.html" . }}
 </div>
 {{ end }}
 
