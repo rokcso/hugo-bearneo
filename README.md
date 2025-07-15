@@ -1,4 +1,4 @@
-# Hugo ʕ•ᴥ•ʔ Bear Blog ✨ Neo
+# Hugo ✨ Bear Neo
 
 > Free, no-nonsense, super-fast blogging.
 

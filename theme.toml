@@ -1,26 +1,19 @@
 # theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+# See https://github.com/gohugoio/hugoThemesSiteBuilder/tree/main#theme-configuration for an example
 
-name = "Hugo Bear Blog Neo"
+name = "Hugo Bear Neo"
 license = "MIT"
-licenselink = "https://github.com/rokcso/hugo-bearblog-neo/blob/main/LICENSE"
-description = "A Hugo theme based on »Bear Blog«. Free, no-nonsense, super-fast blogging. »Bear Blog« now includes a dark color scheme to support dark mode!"
+licenselink = "https://github.com/rokcso/hugo-bearneo/blob/main/LICENSE"
+description = "A feature-rich Hugo theme ported from Hugo Bear Blog, originally based on ʕ•ᴥ•ʔ Bear Blog, offering upvote buttons, elegant TOC, and UX refinements."
 
 # The home page of the theme, where the source can be found.
-homepage = "https://github.com/rokcso/hugo-bearblog-neo"
+homepage = "https://github.com/rokcso/hugo-bearneo"
 
 # If you have a running demo of the theme.
 demosite = "https://rokcso.com"
 
-
-tags = ["blog", "responsive", "minimal", "seo", "clean", "simple", "light", "minimalist", "mobile", "fast", "white", "minimalistic", "reading", "dark mode"]
-features = ["favicon", "seo", "no stylesheets", "no javascript", "rss", "dark mode"]
-
-min_version = "v0.110.0"
-
-# https://gohugo.io/content-management/taxonomies#default-taxonomies
-# https://gohugo.io/templates/taxonomy-templates/#example-list-tags-in-a-single-page-template
-# https://gohugo.io/templates/taxonomy-templates/#example-list-all-site-tags
+tags = ["blog", "responsive", "minimal", "personal", "seo", "clean", "simple", "light", "minimalist", "mobile", "fast", "white", "minimalistic", "reading", "dark mode"]
+features = ["favicon", "seo", "no stylesheets", "no javascript", "rss", "dark mode", "toc", "upvote buttons", "search posts"]
 
 [author]
   name = "Rokcso"
@@ -28,18 +21,11 @@ min_version = "v0.110.0"
 
 # If porting an existing theme
 [original]
-  name = "ʕ•ᴥ•ʔ Bear Blog"
-  homepage = "https://bearblog.dev"
-  repo = "https://github.com/HermanMartinus/bearblog"
+    author = "Jan Raasch"
+    homepage = "https://www.janraasch.com"
+    repo = "https://github.com/janraasch/hugo-bearblog"
 
-# original = [
-#  {
-#    name = "ʕ•ᴥ•ʔ Bear Blog",
-#    homepage = "https://bearblog.dev",
-#    repo = "https://github.com/HermanMartinus/bearblog"
-#  }, {
-#    name = "Hugo Bear Blog",
-#    homepage = "https://github.com/janraasch/hugo-bearblog",
-#    repo = "https://github.com/janraasch/hugo-bearblog"
-#  }
-# ]
+# Hugo versions the theme supports
+[module]
+  [module.hugoVersion]
+    min = "0.110.0"
