@@ -24,8 +24,3 @@ features = ["favicon", "seo", "no stylesheets", "no javascript", "rss", "dark mo
     author = "Jan Raasch"
     homepage = "https://www.janraasch.com"
     repo = "https://github.com/janraasch/hugo-bearblog"
-
-# Hugo versions the theme supports
-[module]
-  [module.hugoVersion]
-    min = "0.110.0"
