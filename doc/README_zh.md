@@ -98,7 +98,7 @@
 
 [Follow](https://follow.is/) 是一个 RSS 订阅工具，作为博客创作者，在 Follow 中 Claim 自己的博客可以接收博客读者通过 Follow 提供的 $POWER 打赏。对此我曾经写过一篇 [文章](https://rokcso.com/p/follow-claim-feed/) 介绍如何在 Follow 中 Claim 自己的博客。
 
-而 hugo-bearblog-neo 原生支持了我文章中提到的「方案三：RSS Tag」，只需要在 Hugo 博客配置文件 `hugo.toml` 中添加如下配置：
+而 hugo-bearneo 原生支持了我文章中提到的「方案三：RSS Tag」，只需要在 Hugo 博客配置文件 `hugo.toml` 中添加如下配置：
 
 ```toml
 [params]
@@ -112,12 +112,12 @@
 
 特别感谢 [Herman](https://herman.bearblog.dev)，他创建了最初的 [ʕ•ᴥ•ʔ Bear Blog](https://bearblog.dev/)。
 
-特别感谢 janraasch，没有他的 [hugo-bearblog][hugo-bearblog]，就不会有 [hugo-bearblog-neo][hugo-bearblog-neo]。
+特别感谢 janraasch，没有他的 [hugo-bearblog][hugo-bearblog]，就不会有 [hugo-bearneo][hugo-bearneo]。
 
 ## ©️ License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Rokcso][rokcso-blog]
 
 [hugo-bearblog]: https://github.com/janraasch/hugo-bearblog
-[hugo-bearblog-neo]: https://github.com/rokcso/hugo-bearblog-neo
+[hugo-bearneo]: https://github.com/rokcso/hugo-bearneo
 [rokcso-blog]: https://rokcso.com/

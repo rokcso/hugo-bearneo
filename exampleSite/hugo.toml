@@ -2,7 +2,7 @@
 # The basic URL used to generate page links, set it to your website's URL.
 baseURL = "https://example.com/"
 
-theme = "hugo-bearblog-neo"
+theme = "hugo-bearneo"
 
 # 网站的名称，同时将应用到生成的 HTML 元数据中
 # The name of the website, which will also be applied to the generated HTML metadata.

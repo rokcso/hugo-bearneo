@@ -98,7 +98,7 @@ Add the following configuration to the Hugo blog configuration file `hugo.toml`:
 
 [Follow](https://follow.is/) is an RSS subscription tool. As a blog creator, claiming your blog on Follow allows you to receive $POWER tips from blog readers through Follow. I once wrote an [article](https://rokcso.com/p/follow-claim-feed-en/) explaining how to claim your blog on Follow.
 
-The hugo-bearblog-neo natively supports the "Scheme III: RSS Tag" mentioned in my article. You only need to add the following configuration to the Hugo blog configuration file `hugo.toml`:
+The hugo-bearneo natively supports the "Scheme III: RSS Tag" mentioned in my article. You only need to add the following configuration to the Hugo blog configuration file `hugo.toml`:
 
 ```toml
 [params]
@@ -112,12 +112,12 @@ Note: Please remember to replace the Follow id in the configuration with your ow
 
 A special thank you goes out to [Herman](https://herman.bearblog.dev), for creating the original [ʕ•ᴥ•ʔ Bear Blog](https://bearblog.dev/).
 
-Another special thanks to janraasch, without his [hugo-bearblog][hugo-bearblog], there would not be [hugo-bearblog-neo][hugo-bearblog-neo].
+Another special thanks to janraasch, without his [hugo-bearblog][hugo-bearblog], there would not be [hugo-bearneo][hugo-bearneo].
 
 ## ©️ License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Rokcso][rokcso-blog]
 
 [hugo-bearblog]: https://github.com/janraasch/hugo-bearblog
-[hugo-bearblog-neo]: https://github.com/rokcso/hugo-bearblog-neo
+[hugo-bearneo]: https://github.com/rokcso/hugo-bearneo
 [rokcso-blog]: https://rokcso.com/

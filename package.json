@@ -1,5 +1,5 @@
 {
-  "name": "hugo-bearblog-neo",
+  "name": "hugo-bearneo",
   "private": true,
   "version": "0.0.1",
   "description": "🧸 A [Hugo](https://gohugo.io/)-theme based on [Bear Blog](https://bearblog.dev).",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rokcso/hugo-bearblog-neo.git"
+    "url": "git+https://github.com/rokcso/hugo-bearneo.git"
   },
   "author": {
     "name": "Rokcso",
@@ -22,7 +22,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rokcso/hugo-bearblog-neo/issues"
+    "url": "https://github.com/rokcso/hugo-bearneo/issues"
   },
-  "homepage": "https://github.com/rokcso/hugo-bearblog-neo#readme"
+  "homepage": "https://github.com/rokcso/hugo-bearneo#readme"
 }
