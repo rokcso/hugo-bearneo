@@ -1,7 +1,7 @@
-+++
-title = "Hugo"
-menu = "main"
-+++
+---
+title: "Hugo"
+menu: "main"
+---
 
 # Hugo
 
