@@ -13,7 +13,7 @@ homepage = "https://github.com/rokcso/hugo-bearneo"
 demosite = "https://rokcso.com"
 
 tags = ["blog", "responsive", "minimal", "personal", "seo", "clean", "simple", "light", "minimalist", "mobile", "fast", "white", "minimalistic", "reading", "dark mode"]
-features = ["favicon", "seo", "no stylesheets", "no javascript", "rss", "dark mode", "toc", "upvote buttons", "search posts"]
+features = ["favicon", "seo", "no stylesheets", "rss", "dark mode", "toc", "upvote buttons", "search posts"]
 
 [author]
   name = "Rokcso"

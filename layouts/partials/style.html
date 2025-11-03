@@ -249,13 +249,13 @@
         z-index: 99; /* 设置堆叠顺序，确保在其他元素之上 */
 
         /* 隐藏滚动条 */
-        &::-webkit-scrollbar {
-            /* Webkit 浏览器（Chrome, Safari）滚动条样式 */
-            display: none; /* 隐藏滚动条 */
-        }
-
         -ms-overflow-style: none; /* IE 和 Edge 隐藏滚动条 */
         scrollbar-width: none; /* Firefox 隐藏滚动条 */
+    }
+
+    div.toc::-webkit-scrollbar {
+        /* Webkit 浏览器（Chrome, Safari）滚动条样式 */
+        display: none; /* 隐藏滚动条 */
     }
 
     .toc-nav {

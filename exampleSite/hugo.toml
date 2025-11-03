@@ -79,6 +79,10 @@ ignoreErrors = ["error-disable-taxonomy"]
   # Article page whether enabled TOC?
   toc = true
 
+  # 文章页是否启用图片放大功能
+  # Article page whether enabled image zoom?
+  imageZoom = true
+
   # Post Upvote API 的配置，详见 https://github.com/rokcso/post-upvote-api
   # Post Upvote API configuration, see https://github.com/rokcso/post-upvote-api for details.
   upvote = false

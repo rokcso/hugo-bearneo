@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.1",
   "description": "A feature-rich [Hugo](https://gohugo.io/) theme ported from [Hugo Bear Blog](https://github.com/janraasch/hugo-bearblog), originally based on ʕ•ᴥ•ʔ [Bear Blog](https://bearblog.dev), offering upvote buttons, elegant TOC, and UX refinements.",
-  "main": "index.js",
   "devDependencies": {
     "js-beautify": "^1.15.1"
   },
