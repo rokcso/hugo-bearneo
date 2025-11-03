@@ -41,7 +41,7 @@ ignoreErrors = ["error-disable-taxonomy"]
   # The path to your favicon file, which should be a square PNG file at least 32px x 32px.
   # 提示：最好将 favicon.ico 文件放入你的 static 文件夹中
   # Hint: It is best to place the favicon.ico file in your static folder.
-  favicon = "images/favicon.png"
+  favicon = "img/favicon.png"
 
   # 这些图像用于结构化数据模板。这将显示为如 Twitter 或 Slack 想要为一个链接到你的网站的链接生成预览时
   # These images are used for structured data templates. This will be displayed as when Twitter or Slack want to generate a preview for a link to your website.
