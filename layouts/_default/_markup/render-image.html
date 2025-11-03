@@ -1,4 +1,37 @@
-<figure class="image-caption">
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+<figure
+    class="image-caption{{ if $.Page.Site.Params.imageZoom }} image-zoom-container{{ end }}"
+>
+    {{ if $.Page.Site.Params.imageZoom }}
+    <input
+        type="checkbox"
+        id="img-{{ substr (md5 .Destination) 0 8 }}"
+        class="image-zoom-toggle"
+        aria-label="放大图片：{{ .Text }}"
+    />
+    <label
+        for="img-{{ substr (md5 .Destination) 0 8 }}"
+        class="image-zoom-label"
+    >
+        <img
+            src="{{ .Destination | safeURL }}"
+            alt="{{ .Text }}"
+            loading="lazy"
+            class="zoomable-image"
+        />
+    </label>
+    <!-- 添加overlay元素用于显示放大的图片 -->
+    <label
+        for="img-{{ substr (md5 .Destination) 0 8 }}"
+        class="image-zoom-overlay"
+    >
+        <img
+            src="{{ .Destination | safeURL }}"
+            alt="{{ .Text }}"
+            class="zoomable-image"
+        />
+    </label>
+    {{ else }}
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" />
+    {{ end }}
     <figcaption>{{ .Text }}</figcaption>
 </figure>

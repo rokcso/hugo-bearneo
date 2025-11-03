@@ -47,7 +47,7 @@ ignoreErrors = ["error-disable-taxonomy"]
   # These images are used for structured data templates. This will be displayed as when Twitter or Slack want to generate a preview for a link to your website.
   # 请参见 https://gohugo.io/templates/embedded/#x-twitter-cards 和 https://gohugo.io/templates/internal#open-graph
   # Please refer to https://gohugo.io/templates/embedded/#x-twitter-cards and https://gohugo.io/templates/internal#open-graph.
-  images = ["images/share.png"]
+  images = ["img/share.png"]
 
   # 默认情况下，此主题以「02 Jan, 2006」的格式显示日期
   # By default, this theme displays dates in the format '02 Jan, 2006'.
@@ -70,7 +70,7 @@ ignoreErrors = ["error-disable-taxonomy"]
   # 博客文章列表是否显示文章数量（只统计未被隐藏的文章），Bear Blog 样式为 false
   # The blog post list does not display the number of articles (only counts the articles that have not been hidden), the Bear Blog style is false.
   showPostCount = true
-  
+
   # 博客文章列表页是否启用文章搜索功能
   # Is the article search function enabled on the blog article list page?
   postSearch = true
@@ -82,7 +82,7 @@ ignoreErrors = ["error-disable-taxonomy"]
   # Post Upvote API 的配置，详见 https://github.com/rokcso/post-upvote-api
   # Post Upvote API configuration, see https://github.com/rokcso/post-upvote-api for details.
   upvote = false
-  upvoteURL = "https://post-upvote-api.example.com/" 
+  upvoteURL = "https://post-upvote-api.example.com/"
 
   [params.footer]
     # 是否隐藏版权说明文案，若不配置，默认 false

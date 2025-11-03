@@ -21,7 +21,8 @@
     - [点赞文章](#点赞文章)
     - [搜索文章](#搜索文章)
     - [文章列表页按年份分组](#文章列表页按年份分组)
-    - [文章页显示目录](#文章页显示目录)
+    - [显示目录](#显示目录)
+    - [图片缩放](#图片缩放)
     - [Follow App Claim](#follow-app-claim)
 - [🎁 鸣谢](#-鸣谢)
 - [©️ License](#️-license)
@@ -33,7 +34,8 @@
 - [x] 点赞文章（亮点功能 👍，复刻自 Bear Blog）
 - [x] 搜索文章
 - [x] 文章列表页按年份分组
-- [x] 文章页显示目录
+- [x] 显示目录
+- [x] 图片缩放
 - [x] Follow App Claim
 
 还有一些优化项：
@@ -60,7 +62,7 @@
 ```toml
 [params]
     upvote = true
-    upvoteURL = "刚刚部署的 Worker 的域名/" 
+    upvoteURL = "刚刚部署的 Worker 的域名/"
 ```
 
 注意：URL 末尾的 `/` 一定要加上！
@@ -85,13 +87,22 @@
     groupByYear = true
 ```
 
-### 文章页显示目录
+### 显示目录
 
 在 Hugo 博客配置文件 `hugo.toml` 中添加如下配置:
 
 ```toml
 [params]
     toc = true
+```
+
+### 图片缩放
+
+在 Hugo 博客配置文件 `hugo.toml` 中添加如下配置:
+
+```toml
+[params]
+    imageZoom = true
 ```
 
 ### Follow App Claim
