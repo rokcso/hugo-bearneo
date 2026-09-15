@@ -27,6 +27,7 @@ Transplanted from [Hugo Bear Blog][hugo-bearblog], because the original author c
   - [Mermaid diagrams](#mermaid-diagrams)
   - [External links](#external-links)
   - [Follow App Claim](#follow-app-claim)
+  - [Author Image](#author-image)
 - [🎁 Acknowledgments](#-acknowledgments)
 - [©️ License](#️-license)
 
@@ -42,6 +43,7 @@ Based on [Hugo Bear Blog][hugo-bearblog], the following features have been added
 - [x] Mermaid diagrams
 - [x] External link handling
 - [x] Follow App Claim
+- [x] Author Image
 
 There are still some optimization items:
 
@@ -170,6 +172,14 @@ The hugo-bearneo natively supports the "Scheme III: RSS Tag" mentioned in my art
 ```
 
 Note: Please remember to replace the Follow id in the configuration with your own!
+
+### Author Image
+Set this value to any image contained in the `static/` folder in order to display the author's image next to the title
+
+```toml
+[params.author]
+    authorImage = "img/favicon.png"
+```
 
 ## 🎁 Acknowledgments
 
