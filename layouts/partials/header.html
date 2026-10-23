@@ -1,7 +1,11 @@
 <a href="{{ "" | relURL }}" class="title">
-  {{ with .Site.Params.Author.authorImage }}
-      <img src="{{ . | relURL }}" alt="{{ $.Site.Params.Author.name | default $.Site.Title }}" class="author-image">
-  {{ end }}
+  {{- /* author may be a string (name only) or a table */}}
+  {{- $author := .Site.Params.Author }}
+  {{- if reflect.IsMap $author }}
+  {{- with $author.authorImage }}
+      <img src="{{ . | relURL }}" alt="{{ $author.name | default $.Site.Title }}" class="author-image">
+  {{- end }}
+  {{- end }}
   <h1>{{ .Site.Title }}</h1>
 </a>
 <nav>{{- partial "nav.html" . -}}</nav>

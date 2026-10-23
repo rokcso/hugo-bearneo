@@ -1,17 +1,21 @@
 {{ if ne .Site.Params.Footer.hideRSSAndEmail true }}
+{{- /* author may be a string (name only) or a table */}}
+{{ $author := .Site.Params.Author }}
+{{ $authorEmail := "" }}
+{{ if reflect.IsMap $author }}{{ $authorEmail = $author.email }}{{ end }}
 <!-- Enable RSS and email exists -->
-{{ if and ( ne .Site.Params.RSS.enableRSS false ) .Site.Params.Author.email }}
-Subscribe via <a href="/index.xml">RSS</a> or just <a href="mailto:{{ .Site.Params.Author.email }}">say hello</a>.
+{{ if and ( ne .Site.Params.RSS.enableRSS false ) $authorEmail }}
+Subscribe via <a href="/index.xml">RSS</a> or just <a href="mailto:{{ $authorEmail }}">say hello</a>.
 <br />
 {{ end }}
 <!-- Enable RSS and email does not exists -->
-{{ if and ( ne .Site.Params.RSS.enableRSS false ) (not .Site.Params.Author.email) }}
+{{ if and ( ne .Site.Params.RSS.enableRSS false ) (not $authorEmail) }}
 Subscribe via <a href="/index.xml">RSS</a>.
 <br />
 {{ end }}
 <!-- Do not enable RSS and email exists -->
-{{ if and ( ne .Site.Params.RSS.enableRSS true ) .Site.Params.Author.email }}
-Say hello via <a href="mailto:{{ .Site.Params.Author.email }}">email</a>.
+{{ if and ( ne .Site.Params.RSS.enableRSS true ) $authorEmail }}
+Say hello via <a href="mailto:{{ $authorEmail }}">email</a>.
 <br />
 {{ end }}
 {{ end }}
