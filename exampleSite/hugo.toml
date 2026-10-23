@@ -124,8 +124,8 @@ ignoreErrors = ["error-disable-taxonomy"]
     # 若不配置，默认空
     # If not configured, default is empty
     email = "example@example.com"
-    # 标题旁显示的作者头像（可留空）。默认使用网站图标（favicon）
-    # Image of the author to be displayed next to the title (can be empty). Default is favicon 
+    # 站点标题左侧显示的作者头像，建议使用正方形图片；留空则不显示
+    # Author avatar shown to the left of the site title, a square image works best; leave empty to hide it
     authorImage = "img/favicon.png"
 
 [markup]

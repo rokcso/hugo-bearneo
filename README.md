@@ -174,7 +174,7 @@ The hugo-bearneo natively supports the "Scheme III: RSS Tag" mentioned in my art
 Note: Please remember to replace the Follow id in the configuration with your own!
 
 ### Author Image
-Set this value to any image contained in the `static/` folder in order to display the author's image next to the title
+Set this to any image inside the `static/` folder to show an author avatar to the left of the site title. A square image works best — the avatar scales with the title size. Leave it empty to hide the avatar.
 
 ```toml
 [params.author]
