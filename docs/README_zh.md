@@ -27,6 +27,7 @@
     - [Mermaid 图表](#mermaid-图表)
     - [外部链接](#外部链接)
     - [Follow App Claim](#follow-app-claim)
+    - [作者头像](#作者头像)
 - [🎁 鸣谢](#-鸣谢)
 - [©️ License](#️-license)
 
@@ -42,6 +43,7 @@
 - [x] Mermaid 图表
 - [x] 外部链接处理
 - [x] Follow App Claim
+- [x] 作者头像
 
 还有一些优化项：
 
@@ -170,6 +172,14 @@ flowchart LR
 ```
 
 注意：请记得将配置中的 follow id 替换为你自己的！
+
+### 作者头像
+将此值设置为 `static/` 文件夹中的任意图片，即可在站点标题左侧显示作者头像。建议使用正方形图片 —— 头像会随标题字号自动缩放。留空则不显示。
+
+```toml
+[params.author]
+    authorImage = "img/favicon.png"
+```
 
 ## 🎁 鸣谢
 

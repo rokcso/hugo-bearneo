@@ -80,6 +80,32 @@
     .title {
         text-decoration: none;
         border: 0;
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        /* 站点标题字号：窄屏自动缩小，720px 以上固定 2rem */
+        font-size: clamp(1.5rem, 10vw - 1.6rem, 2rem);
+        margin: 16px 0;
+    }
+
+    .title h1 {
+        margin: 0;
+        /* 继承 .title 的 font-size，不再走 h1 默认的 2em */
+        font-size: 1em;
+        line-height: 1.15;
+    }
+
+    /* 头像尺寸用 em，跟随标题字号自动缩放 */
+    .author-image {
+        flex: none;
+        width: 1.4em;
+        height: 1.4em;
+        margin: 0;
+        border: 0;
+        border-radius: 50%;
+        object-fit: cover;
+        /* 覆盖全局 img 的 content-visibility: auto */
+        content-visibility: visible;
     }
 
     .title:hover {

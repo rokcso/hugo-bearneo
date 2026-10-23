@@ -1,4 +1,7 @@
 <a href="{{ "" | relURL }}" class="title">
+  {{ with .Site.Params.Author.authorImage }}
+      <img src="{{ . | relURL }}" alt="{{ $.Site.Params.Author.name | default $.Site.Title }}" class="author-image">
+  {{ end }}
   <h1>{{ .Site.Title }}</h1>
 </a>
 <nav>{{- partial "nav.html" . -}}</nav>
